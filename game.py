@@ -4,40 +4,44 @@
 import random
 import time
 
+# define wait
+def wait(i):
+    time.sleep(i)
+
 # player intro to game
-print("Hello!")
-time.sleep(1)
+print("\nHello!")
+wait(1)
 
 # player name
 player_name = input("\nWhat's your name?: ")
 
 # instructions
 print(f"\nWelcome to the Guessing Game, {player_name}!")
-time.sleep(2.5)
+wait(2.5)
 print("\nIn this game I will pick a number between 1 and 10.")
-time.sleep(3.5)
+wait(3.5)
 print("\nYou need to figure out which number I'm thinking of.")
-time.sleep(3.5)
+wait(3.5)
 print("\nHowever, you only get 3 attempts to guess.")
-time.sleep(2.75)
+wait(2.75)
 print("\nDon't worry though!")
-time.sleep(1.75)
+wait(1.75)
 print("\nIf you guess wrong, I'll let you know if your guess was too high or too low.")
-time.sleep(3.75)
+wait(3.75)
 print("\nLet's begin!")
-time.sleep(2.75)
+wait(2.75)
 
 # while True restarts the game without the going through the intro again
 while True:
 
-    # attempt counter within current loop
-    attempts = 0
-
     # computer picks a number
     number = random.randint(1, 10)
     print("\nAlright... I have a number.")
-    time.sleep(2)
+    wait(2)
     print(f"\nMake your guess, {player_name}!")
+
+    # attempt counter within current loop
+    attempts = 0
 
     # guessing conditions while loop
     while attempts < 3:
@@ -58,5 +62,4 @@ while True:
     start = input(f"\nDo you want to play again, {player_name}? (y/n): ")
     if start != "y":
         print("\nThanks for playing!")
-        time.sleep(2)
         break
